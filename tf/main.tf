@@ -10,6 +10,11 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   region = "eu-west-1"
+  default_tags {
+    tags = {
+      repo = "infra-build"
+    }
+  }
 }
 
 resource "aws_vpc" "vpc" {
